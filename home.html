@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <head>
+        <title>Chatbot</title>
+    </head>
+    <body>
+        <form id="chatbot-form">
+            <label>Enter a message: </label>
+            <input type="text" id="chatbot-input">
+            <button type="submit">Submit</button>
+        </form> 
+        <div id="chatbot-response"></div>
+
+        <script>
+            $(document).ready(function() {
+         $('#chatbot-form').submit(function(event) {
+             event.preventDefault();
+             const message = $('#chatbot-input').val();
+             $.ajax({
+                 type: 'POST',
+                 url: 'http://localhost:3000/chatbot',
+                 data: {
+                     message: message
+                 },
+                 success: function(response) {
+                     $('#chatbot-response').text(response.text);
+                 }
+             });
+         });
+     });
+         </script>
+    </body>
+    
+</html>
