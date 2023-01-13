@@ -23,17 +23,38 @@
       }
   
       #chat-history {
-        height: 300px;
+        height: 500px;
         overflow-y: auto;
+      }
+
+      #chatbot-form {
+        padding-top: 15px;
+        padding-left: 15px;
+      }
+
+      #chatbot-input {
+        height: 25px;
+        width: 150px;
+        border-radius: 5%;
+      }
+
+      #inputText {
+        font-size: 25px;
+      }
+
+      #submitButton {
+        font-size: 13px;
+        height: 30px;
+        width: 100px;
       }
     </style>
   </head>
   
   <body>
     <form id="chatbot-form">
-      <label>Enter a message:</label>
+      <label id="inputText">Enter a message:</label>
       <input type="text" id="chatbot-input">
-      <button type="submit">Submit</button>
+      <button type="submit" id="submitButton">Submit</button>
     </form>
     <div id="chatbot-response"></div>
   
